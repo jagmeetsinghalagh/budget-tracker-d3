@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Planner</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <h1>Budget Planner</h1>
+        <div class="grid">
+            <div class="form">
+                <form>
+                    <input 
+                            type="text" 
+                            name="name"
+                            id="name" 
+                            placeholder="Item name" 
+                            class="form-control"
+                    >
+                    <div class="form-group">
+                        <input 
+                            type="number" 
+                            placeholder="Expense" 
+                            name="expense" 
+                            id="expense"
+                            class="form-control"
+                        >
+                    </div>
+                    <button type="submit" class="btn">Add Item</button>
+                    <p class="errors"></p>
+                </form>
+            </div>
+            <div class="canvas"></div>
+        </div>
+    </main>
+
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.13.2/firebase-firestore.js"></script>
+    <script>
+      var firebaseConfig = {
+        apiKey: "AIzaSyByVg0lrRFCZmiuTqMLgkR5uMQ0AyukQT8",
+        authDomain: "d3-budgetplanner.firebaseapp.com",
+        databaseURL: "https://d3-budgetplanner.firebaseio.com",
+        projectId: "d3-budgetplanner",
+        storageBucket: "d3-budgetplanner.appspot.com",
+        messagingSenderId: "240155366699",
+        appId: "1:240155366699:web:a03295d56ab615a608a16e"
+      };
+      firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
+    </script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3-legend/2.25.6/d3-legend.js"></script>
+    <script src="dom.js"></script>
+    <script src="graph.js"></script>
+</body>
+</html>
